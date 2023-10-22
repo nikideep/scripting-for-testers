@@ -11,7 +11,7 @@ response = requests.get(url)
 
 #read that data into a variable  
 json_data = response.json()
-#hi
+
 
 #create a list for storing the url of each photo
 url_list = []
@@ -20,10 +20,12 @@ for photo in json_data:
   print(photo['url'])
 print(type(photo))
 print(type(photo['url']))
+#assert method is used to print statements
 assert len(url_list)==5000,"length is not 5000"
 #print the length of the list
 print("the length of the List is:\n",len(url_list))
 #convert the list to set to find the duplicatae urls
 conv_1 = set(url_list)
-assert len(conv_1)<5000,"no duplicates found"
+assert len(conv_1)<5000,"no duplicates found" 
 print("The length of the list after removing duplicate url:\n",len(conv_1))
+#the end
